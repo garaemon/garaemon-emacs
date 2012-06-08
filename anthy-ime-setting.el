@@ -1,0 +1,8 @@
+(when (or (eq system-type 'cygwin)
+	  (eq system-type 'gnu/linux))
+  (setq load-path (append '("/usr/share/emacs/site-lisp/anthy/")
+			  load-path))
+  (load-library "anthy")
+  (global-unset-key "\C-\\")
+  (setq default-input-method "japanese-anthy")
+  (global-set-key "\C-\\" 'anthy-mode))

@@ -1,0 +1,1 @@
+(autoload 'goby "goby" nil t)
