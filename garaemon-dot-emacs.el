@@ -31,6 +31,7 @@
 ;; helm
 (require 'helm-config)
 (global-set-key "\C-xb" 'helm-mini)
+
 ;; ;; anything-grep
 ;; (require 'helm-grep)
 ;; (setq helm-grep-alist
@@ -604,8 +605,11 @@
 (cl-indent 'mapping 'let)
 (cl-indent 'define-test 'let)
 
+;; magit!
 (add-to-list 'exec-path "/opt/local/bin")
 (require 'magit)
+(global-set-key "\C-xg" 'magit-status)
+
 
 (require 'markdown-mode)
 
