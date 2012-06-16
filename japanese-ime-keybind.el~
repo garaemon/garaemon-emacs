@@ -1,4 +1,0 @@
-(require 'garaemon-util)
-(global-unset-key "\C-\\")
-(when-carbon
- (mac-input-method-mode 1))

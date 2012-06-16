@@ -1,6 +1,6 @@
 ;; anything-cheat-sheat-popup.el
 ;; written by R.Ueda (garaemon)
-
+(require 'outline)
 (defvar anything-c-cheat-sheat-sources nil)
 (defvar anything-cheat-sheat-popup-debug t)
 (defvar anything-cheat-header-regexp outline-regexp)

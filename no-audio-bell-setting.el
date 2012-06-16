@@ -1,1 +1,0 @@
-(setq visible-bell t)
