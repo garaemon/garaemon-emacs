@@ -608,7 +608,7 @@
 ;; magit!
 (add-to-list 'exec-path "/opt/local/bin")
 (require 'magit)
-(global-set-key "\C-xg" 'magit-status)
+(global-set-key "\C-cl" 'magit-status)
 
 
 (require 'markdown-mode)
