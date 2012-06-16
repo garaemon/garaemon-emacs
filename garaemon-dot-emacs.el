@@ -28,48 +28,51 @@
 ;; ;;;; bind to M-h
 ;; ;;(global-set-key "\M-h" 'anything-cheat-sheat)
 
+;; helm
+(require 'helm-config)
+(global-set-key "\C-xb" 'helm-mini)
 ;; ;; anything-grep
-;; ;; (require 'anything-grep)
-;; ;; (setq anything-grep-alist
-;; ;;       ;; 全バッファのファイル名においてegrepをかける。moccurの代わり。
-;; ;;       '(("buffers" ("egrep -Hin %s $buffers" "/"))
-;; ;; 	;; ~/memo 以下から再帰的にegrepをかける。不要なファイルは除かれる。
-;; ;; 	("memo" ("ack-grep -af | xargs egrep -Hin %s" "~/memo"))
-;; ;; 	;; ~/doc/postgresql-74 から *.txt に対してegrepをかける。
-;; ;; 	("PostgreSQL" ("egrep -Hin %s *.txt" "~/doc/postgresql-74/"))
-;; ;; 	;; ~/prog以下のファイルをまとめて検索する。
-;; ;; 	("~/prog"
-;; ;; 	 ("ack-grep -af | xargs egrep -Hin %s" "~/prog"))
-;; ;; 	))
+;; (require 'helm-grep)
+;; (setq helm-grep-alist
+;;       ;; 全バッファのファイル名においてegrepをかける。moccurの代わり。
+;;       '(("buffers" ("egrep -Hin %s $buffers" "/"))
+;; 	;; ~/memo 以下から再帰的にegrepをかける。不要なファイルは除かれる。
+;; 	("memo" ("ack-grep -af | xargs egrep -Hin %s" "~/memo"))
+;; 	;; ~/doc/postgresql-74 から *.txt に対してegrepをかける。
+;; 	("PostgreSQL" ("egrep -Hin %s *.txt" "~/doc/postgresql-74/"))
+;; 	;; ~/prog以下のファイルをまとめて検索する。
+;; 	("~/prog"
+;; 	 ("ack-grep -af | xargs egrep -Hin %s" "~/prog"))
+;; 	))
 ;; ;;
-;; (global-set-key "\C-c;" 'anything-grep)
-;; (global-set-key "\C-c:" 'anything-grep-by-name)
-;; (require 'anything)
-;; (require 'anything-config)
-;; (require 'anything-rospack)
-;; (setq anything-sources
-;;       (list anything-c-source-buffers
-;;             anything-c-rospack-source
-;;             anything-c-source-file-name-history
-;;             anything-c-source-imenu
-;;             anything-c-source-recentf
-;;             ;;anything-c-source-man-pages
-;;             ;;anything-c-source-info-pages
-;;             anything-c-source-calculation-result
-;;             anything-c-source-kill-ring
-;;             ;;anything-c-source-bookmarks
-;;             ;;anything-c-source-locate))
+;; (global-set-key "\C-c;" 'helm-grep)
+;; (global-set-key "\C-c:" 'helm-grep-by-name)
+;; (require 'helm)
+;; (require 'helm-config)
+;; ;;(require 'helm-rospack)
+;; (setq helm-sources
+;;       (list helm-c-source-buffers
+;;             ;;helm-c-rospack-source
+;;             helm-c-source-file-name-history
+;;             helm-c-source-imenu
+;;             helm-c-source-recentf
+;;             ;;helm-c-source-man-pages
+;;             ;;helm-c-source-info-pages
+;;             helm-c-source-calculation-result
+;;             helm-c-source-kill-ring
+;;             ;;helm-c-source-bookmarks
+;;             ;;helm-c-source-locate))
 ;;             ))
 
-;; (global-set-key "\C-xb" 'anything)
-;; (global-set-key "\M-y" 'anything-show-kill-ring)
+;; (global-set-key "\C-xb" 'helm)
+;; (global-set-key "\M-y" 'helm-show-kill-ring)
 ;; ;;(global-set-key [?\C-;] 'iswitchb-buffer)
-;; (anything-iswitchb-setup)
+;; (helm-iswitchb-setup)
 
-;; (define-key anything-map (kbd "C-p") 'anything-previous-line)
-;; (define-key anything-map (kbd "C-n") 'anything-next-line)
-;; (define-key anything-map (kbd "C-v") 'anything-next-source)
-;; (define-key anything-map (kbd "M-v") 'anything-previous-source)
+;; (define-key helm-map (kbd "C-p") 'helm-previous-line)
+;; (define-key helm-map (kbd "C-n") 'helm-next-line)
+;; (define-key helm-map (kbd "C-v") 'helm-next-source)
+;; (define-key helm-map (kbd "M-v") 'helm-previous-source)
 ;; (global-set-key "\C-xp" (lambda () (interactive) (other-window -1)))
 
 (when (require 'auto-complete nil t)
@@ -373,19 +376,19 @@
     (flyspell-mode)
     (local-set-key [(control .)] 'flyspell-auto-correct-word)))
 
-(require 'anything-cheat-sheat-popup)
+;; (require 'anything-cheat-sheat-popup)
 
-(defanything-cheat-sheat emacs-lisp                ;name, must be unique
-  (emacs-lisp-mode lisp-interaction-mode)          ;major mode list
-  "~/org/cheat-sheat/emacs-lisp.org")              ;cheat file name
+;; (defanything-cheat-sheat emacs-lisp                ;name, must be unique
+;;   (emacs-lisp-mode lisp-interaction-mode)          ;major mode list
+;;   "~/org/cheat-sheat/emacs-lisp.org")              ;cheat file name
 
-(defanything-cheat-sheat slime
-  (slime-repl-mode)
-  "~/org/cheat-sheat/slime.org")
+;; (defanything-cheat-sheat slime
+;;   (slime-repl-mode)
+;;   "~/org/cheat-sheat/slime.org")
 
-(defanything-cheat-sheat org
-  (org-mode)
-  "~/org/cheat-sheat/org.org")
+;; (defanything-cheat-sheat org
+;;   (org-mode)
+;;   "~/org/cheat-sheat/org.org")
 
 ;; bind to M-h
 (global-set-key "\M-h" 'anything-cheat-sheat)
