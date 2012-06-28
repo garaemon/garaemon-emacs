@@ -74,7 +74,7 @@
 ;; (define-key helm-map (kbd "C-n") 'helm-next-line)
 ;; (define-key helm-map (kbd "C-v") 'helm-next-source)
 ;; (define-key helm-map (kbd "M-v") 'helm-previous-source)
-;; (global-set-key "\C-xp" (lambda () (interactive) (other-window -1)))
+(global-set-key "\C-xp" (lambda () (interactive) (other-window -1)))
 
 (when (require 'auto-complete nil t)
   (require 'auto-complete-config)
@@ -394,8 +394,9 @@
 ;; bind to M-h
 (global-set-key "\M-h" 'anything-cheat-sheat)
 
-(require 'js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;; disable js2-mode, it's heavy
+;; (require 'js2-mode)
+;; (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;;(setq js2-bounce-indent-flag nil)
 ;;(define-key js2-mode-map "\C-i" 'indent-and-back-to-indentation)
@@ -609,7 +610,6 @@
 (add-to-list 'exec-path "/opt/local/bin")
 (require 'magit)
 (global-set-key "\C-cl" 'magit-status)
-
 
 (require 'markdown-mode)
 
