@@ -1167,3 +1167,5 @@
 
 (provide 'garaemon-dot-emacs)
 
+;; for emacs24 x mac
+(setq mac-command-modifier 'meta)
